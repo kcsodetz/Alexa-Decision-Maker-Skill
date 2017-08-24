@@ -1,0 +1,8 @@
+GetColorIntent what color should I wear today
+GetColorIntent what should I wear today
+GetCuisineIntent what should I eat today
+GetCuisineIntent what kind of food should I get today
+GetCuisineIntent what should I get to eat today
+HelpIntent help
+StopIntent stop
+StopIntent cancel

@@ -1,0 +1,16 @@
+{
+  "intents": [
+    {
+      "intent": "GetColorIntent"
+    },
+    {
+      "intent": "GetCuisineIntent"
+    },
+    {
+      "intent": "HelpIntent"
+    },
+    {
+      "intent": "StopIntent"
+    }
+  ]
+}
