@@ -13,6 +13,8 @@ An alexa skill that can give simple suggestions, such as what type of cuisine to
 
  > Alexa, ask Decision Maker what I should eat today
 
- > Alexa, ask Decision Maker what sounds good for lunch today?
+ > Alexa, ask Decision Maker what sounds good for lunch today
 
- > Alexa, ask Decision Maker what should I wear today?
+ > Alexa, ask Decision Maker what should I wear today
+
+ > Alexa, ask Decision Maker what we should watch today
