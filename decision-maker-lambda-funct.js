@@ -23,31 +23,38 @@ exports.handler = (event, context) => {
       case "IntentRequest":
         // Intent Request
         console.log(`INTENT REQUEST`);
-		
+		var random, output, basePhrase;
 		switch(event.request.intent.name){
-			
 			case "GetColorIntent" :
-				var colors = ["blue", "green", "yellow", "white", "black", "purple", "red", "teal", "grey"];
-				var color = colors[Math.floor(Math.random()*colors.length)];
-		        var rand = Math.floor(Math.random()*3);
-		        var output;
-		        var basePhrase;
-		        switch(rand){
-		        case 0:
-				    basePhrase = "You should wear ";
-				    output = basePhrase.concat(color);
-				    break;
-				case 1:
-				    basePhrase = " seems like a good choice today.";
-				    output = color.concat(basePhrase);
-				    break;
-				case 2:
-				    basePhrase = "I think you should wear ";
-				    output = basePhrase.concat(color);
-				    break;
-				default:
-				    //output = "An unexpected error has occured.";
-				    throw "Invalid Intent";
+				var colors = [
+					"blue",
+					"green",
+					"yellow", 
+					"white", 
+					"black", 
+					"purple", 
+					"red", 
+					"teal", 
+					"grey"
+					];
+				var color = colors[Math.floor(Math.random() * colors.length)];
+		        random = Math.floor(Math.random() * 3);
+		        switch(random) {
+		        	case 0:
+				    		basePhrase = "You should wear ";
+				    		output = basePhrase.concat(color);
+				    		break;
+							case 1:
+				    		basePhrase = " seems like a good choice today.";
+				    		output = color.concat(basePhrase);
+				    		break;
+							case 2:
+				    		basePhrase = "I think you should wear ";
+				    		output = basePhrase.concat(color);
+				    		break;
+							default:
+				    		//output = "An unexpected error has occured.";
+				    		throw "Invalid Intent";
 		        }
 				context.succeed(
 					generateResponse(
@@ -70,34 +77,75 @@ exports.handler = (event, context) => {
 				"Greek",
 				"Vietnamese",
 				"Filipino",
-				"Mediterranean"];
-				var cuisine = cuisines[Math.floor(Math.random()*cuisines.length)];
-				var basePhrase1;
-				var basePhrase2;
-				var out;
-				var random = Math.floor(Math.random()*3);
+				"Mediterranean"
+				];
+				var cuisine = cuisines[Math.floor(Math.random() * cuisines.length)];
+				random = Math.floor(Math.random() * 3);
 				switch(random){
 				    case 0:
-				       basePhrase1 = "You should eat ";
-				       basePhrase1 = basePhrase1.concat(cuisine);
-				       out = basePhrase1.concat(" today");
+				       basePhrase = "You should eat ";
+				       basePhrase = basePhrase.concat(cuisine);
+				       output = basePhrase.concat(" today");
 				       break;
 				    case 1:
-				        basePhrase1 = "I think ";
-				        basePhrase1 = basePhrase1.concat(cuisine);
-				        out = basePhrase1.concat(" food sounds pretty good today");
+				        basePhrase = "I think ";
+				        basePhrase = basePhrase.concat(cuisine);
+				        output = basePhrase.concat(" food sounds pretty good today");
 				        break;
 				    case 2:
-				        basePhrase1 = "I think ";
-				        basePhrase1 = basePhrase1.concat(cuisine);
-				        out = basePhrase1.concat(" would be a good choice");
+				        basePhrase = "I think ";
+				        basePhrase = basePhrase.concat(cuisine);
+				        output = basePhrase.concat(" would be a good choice");
 				        break;
 				}
 				
-				 
 				context.succeed(
 					generateResponse(
-						buildSpeechletResponse(out, true), 
+						buildSpeechletResponse(output, true), 
+							{}
+					)
+				);
+				break;
+				
+			case "GetMovieGenreIntent" :
+				var genres = [
+						"Action", 
+						"Adventure",
+						"Comedy",
+						"Crime",
+						"Drama",
+						"Fantasy",
+						"Mystery",
+						"Political",
+						"Romance",
+						"Satire",
+						"Science Fiction",
+						"Thriller",
+						"Western",
+						"Kids"
+					];
+					var genre = genres[Math.floor(Math.random() * genres.length)];
+					random = Math.floor(Math.random() * 3);
+					switch (random) {
+						case 0:
+				       basePhrase = "You should watch a ";
+				       basePhrase = basePhrase.concat(genre);
+				       output = basePhrase.concat(" movie today");
+				       break;
+				    case 1:
+				        basePhrase = "I think a ";
+				        basePhrase = basePhrase.concat(genre);
+				        output = basePhrase.concat(" movie sounds pretty good today");
+				        break;
+				    case 2:
+				        basePhrase = "I think a ";
+				        basePhrase = basePhrase.concat(genre);
+				        output = basePhrase.concat(" movie would be a good choice");
+				        break;
+					}
+					context.succeed(
+					generateResponse(
+						buildSpeechletResponse(output, true), 
 							{}
 					)
 				);
@@ -126,11 +174,7 @@ exports.handler = (event, context) => {
 			default:
 				throw "Invalid intent";
 		}
-		
             break;
-			
-		
-
       case "SessionEndedRequest":
         // Session Ended Request
         console.log(`SESSION ENDED REQUEST`);
@@ -157,7 +201,6 @@ buildSpeechletResponse = (outputText, shouldEndSession) => {
 };
 
 generateResponse = (speechletResponse, sessionAttributes) => {
-
   return {
     version: "1.0",
     sessionAttributes: sessionAttributes,
