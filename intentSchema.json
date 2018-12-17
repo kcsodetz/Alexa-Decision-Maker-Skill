@@ -1,16 +1,50 @@
 {
-  "intents": [
-    {
-      "intent": "GetColorIntent"
-    },
-    {
-      "intent": "GetCuisineIntent"
-    },
-    {
-      "intent": "HelpIntent"
-    },
-    {
-      "intent": "StopIntent"
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "decision maker",
+            "intents": [
+                {
+                    "name": "GetColorIntent",
+                    "slots": [],
+                    "samples": [
+                        "what color should I wear today",
+                        "what I should wear today"
+                    ]
+                },
+                {
+                    "name": "GetCuisineIntent",
+                    "slots": [],
+                    "samples": [
+                        "what I should eat today",
+                        "what kind of food should I get today",
+                        "what I should get to eat today"
+                    ]
+                },
+                {
+                    "name": "HelpIntent",
+                    "slots": [],
+                    "samples": [
+                        "help"
+                    ]
+                },
+                {
+                    "name": "StopIntent",
+                    "slots": [],
+                    "samples": [
+                        "stop",
+                        "cancel"
+                    ]
+                },
+                {
+                    "name": "GetMovieGenreIntent",
+                    "slots": [],
+                    "samples": [
+                        "what genre should I watch today",
+                        "what movie genre should I watch today",
+                        "what movie I should watch today"
+                    ]
+                }
+            ],
+            "types": []
+        }
     }
-  ]
-}
