@@ -53,7 +53,7 @@ exports.handler = (event, context) => {
 				    		output = basePhrase.concat(color);
 				    		break;
 							default:
-				    		//output = "An unexpected error has occured.";
+				    		//output = "An unexpected error has occurred.";
 				    		throw "Invalid Intent";
 		        }
 				context.succeed(

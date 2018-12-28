@@ -1,6 +1,6 @@
 # Decision Maker
 
-An alexa skill that can give simple suggestions, such as what type of cuisine to eat as well as what to wear that day. Currently availabe on the Alexa Skills Store.
+An alexa skill that can give simple suggestions, such as what type of cuisine to eat, what to wear, and what movie genre to watch that day. Currently availabe on the Alexa Skills Store.
 
  ## Installation
  
