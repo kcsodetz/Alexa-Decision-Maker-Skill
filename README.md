@@ -1,5 +1,7 @@
 # Decision Maker
 
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://choosealicense.com/licenses/mit/)
+
 An alexa skill that can give simple suggestions, such as what type of cuisine to eat, what to wear, and what movie genre to watch that day. Currently availabe on the Alexa Skills Store.
 
  ## Installation
